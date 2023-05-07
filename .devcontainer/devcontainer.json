@@ -1,0 +1,41 @@
+{
+  "dockerComposeFile": [
+    "docker-compose.yaml"
+  ],
+  "service": "workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Boto3typed.boto3-ide",
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers",
+        "ms-python.vscode-pylance",
+        "mechatroner.rainbow-csv"
+      ]
+    }
+  },
+  "workspaceFolder": "/app",
+  "settings": { // vscode settings to be added to the container
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "editor.formatOnSave": true,
+    "python.linting.flake8Args": [
+      "--max-line-length=150"
+    ],
+    "eslint.workingDirectories": [
+      {
+        "mode": "auto"
+      }
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.typeCheckingMode": "basic",
+    "[python]": {
+      "editor.semanticHighlighting.enabled": true
+    },
+    "python.formatting.provider": "black"
+  },
+  "remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localEnv:PWD}"
+	}
+}

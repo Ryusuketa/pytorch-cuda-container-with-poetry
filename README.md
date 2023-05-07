@@ -19,3 +19,5 @@ docker run --gpus all -it pytorch-cuda-with-poetry
 ```
 
 ## Mount With VS Code devcontainer
+The devcontainer setting is located on `.devcontainer`.
+This setting uses the docker-compose.yaml to run container.
